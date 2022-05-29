@@ -12,7 +12,6 @@ body {
 	--desaturated-dark-blue: hsl(214, 17%, 51%);
 	--grayish-blue: hsl(212, 23%, 69%);
 	--light-grayish-blue: hsl(210, 46%, 95%);
-
 	background-color: var(--light-grayish-blue);
 	min-height: 100vh;
 	display: grid;
@@ -24,7 +23,6 @@ body {
 main {
 	display: grid;
 	grid-template-columns: 1fr;
-	/* grid-template-rows: 40% 60%; */
 	margin: 3em 1em;
 	max-width: 25em;
 	background-color: white;
@@ -48,14 +46,28 @@ p {
 	color: var(--desaturated-dark-blue);
 }
 
-#artist p {
-	color: var(--grayish-blue);
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-img:not(.icon) {
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: contain;
+button {
+	min-width: 2.5em;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: var(--light-grayish-blue);
+	border: none;
+	cursor: pointer;
+}
+
+.icon {
+	width: 1em;
+	height: 1em;
+}
+
+#picture {
+	height: 15em;
 }
 
 #text {
@@ -67,26 +79,25 @@ img:not(.icon) {
 
 #artist {
 	display: flex;
-	max-height: 3em;
+	height: 3em;
 	justify-content: flex-start;
 	align-items: center;
 	gap: 1em;
 	margin-top: 1em;
 }
 
-#artist .image {
-	border-radius: 50%;
+#artist p {
+	color: var(--grayish-blue);
 }
 
-.icon {
-	width: 2.5em;
-	height: 2.5em;
+#avatar {
+	border-radius: 50%;
+	height: 3em;
+	width: 3em;
+	overflow: hidden;
 }
 
 #share {
-	padding: 0.66em;
-	border-radius: 50%;
-	background-color: var(--light-grayish-blue);
 	margin-left: auto;
 }
 
@@ -98,4 +109,17 @@ footer {
 }
 footer a {
 	color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 50em) {
+	main {
+		display: grid;
+		grid-template-columns: 4fr 6fr;
+		grid-template-rows: 1fr;
+		max-width: 50em;
+	}
+
+	#picture {
+		height: 100%;
+	}
 }
