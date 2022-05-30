@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/sahand-masoleh/fem-10-article-preview-component)
-- Live Site URL: [Add live site URL here](https://sahand-masoleh.github.io/fem-10-article-preview-component))
+- Live Site URL: [Github Pages](https://sahand-masoleh.github.io/fem-10-article-preview-component)
 
 ## My process
 
