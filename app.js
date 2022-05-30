@@ -1,6 +1,9 @@
-const share = document.querySelector("#share");
-share.onclick = handlelShareClick;
+const shareBtn = document.querySelector("#share-btn");
+const shareMenu = document.querySelector("#share-menu");
 
-function handlelShareClick() {
-	console.log("nottin'");
+shareBtn.onclick = handleShareClick;
+
+function handleShareClick() {
+	shareBtn.classList.toggle("clicked");
+	shareMenu.classList.toggle("clicked");
 }

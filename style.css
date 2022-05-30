@@ -28,6 +28,7 @@ main {
 	background-color: white;
 	border-radius: 1em;
 	overflow: hidden;
+	position: relative;
 }
 
 h1 {
@@ -46,24 +47,15 @@ p {
 	color: var(--desaturated-dark-blue);
 }
 
+.share-icons {
+	width: 1.5em;
+	height: 1.5em;
+}
+
 img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-}
-
-button {
-	min-width: 2.5em;
-	aspect-ratio: 1;
-	border-radius: 50%;
-	background-color: var(--light-grayish-blue);
-	border: none;
-	cursor: pointer;
-}
-
-.icon {
-	width: 1em;
-	height: 1em;
 }
 
 #picture {
@@ -72,6 +64,7 @@ button {
 
 #text {
 	margin: 2em;
+	margin-bottom: 0;
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -82,8 +75,8 @@ button {
 	height: 3em;
 	justify-content: flex-start;
 	align-items: center;
+	margin: 1em 0;
 	gap: 1em;
-	margin-top: 1em;
 }
 
 #artist p {
@@ -97,8 +90,49 @@ button {
 	overflow: hidden;
 }
 
-#share {
+#share-btn {
+	min-width: 2.5em;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: var(--light-grayish-blue);
+	border: none;
+	cursor: pointer;
 	margin-left: auto;
+	z-index: 10;
+}
+
+#share-icon {
+	background-color: var(--desaturated-dark-blue);
+	height: 1em;
+	mask: url(./images/icon-share.svg) no-repeat center;
+	margin: auto;
+}
+
+#share-btn.clicked {
+	background-color: var(--desaturated-dark-blue);
+}
+
+#share-btn.clicked #share-icon {
+	background-color: white;
+}
+
+#share-menu {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 5em;
+	background-color: var(--very-dark-grayish-blue);
+}
+
+#share-menu.clicked {
+	display: flex;
+	align-items: center;
+	padding: 2em;
+	letter-spacing: 0.33em;
+	color: var(--grayish-blue);
+	gap: 1em;
 }
 
 footer {
@@ -117,9 +151,37 @@ footer a {
 		grid-template-columns: 4fr 6fr;
 		grid-template-rows: 1fr;
 		max-width: 50em;
+		font-size: 0.85em;
 	}
 
 	#picture {
 		height: 100%;
+	}
+
+	#text {
+		margin: 2em;
+	}
+
+	#share-menu {
+		bottom: 8em;
+		left: unset;
+		right: 0;
+		width: 18em;
+		transform: translateX(30%);
+		height: 2em;
+		border-radius: 0.75em;
+		justify-content: center;
+	}
+
+	#share-menu::after {
+		content: "";
+		position: absolute;
+		bottom: -1em;
+		width: 1em;
+		height: 1em;
+		border-left: 1em solid transparent;
+		border-right: 1em solid transparent;
+		border-top: 1em solid var(--very-dark-grayish-blue);
+		box-sizing: border-box;
 	}
 }
