@@ -28,6 +28,7 @@ main {
 	background-color: white;
 	border-radius: 1em;
 	position: relative;
+	box-shadow: 0 1em 1em 0 rgb(0, 0, 0, 0.05);
 }
 
 h1 {
@@ -137,6 +138,17 @@ img {
 	letter-spacing: 0.33em;
 	color: var(--grayish-blue);
 	gap: 1em;
+	animation: fade-in 250ms;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 footer {
